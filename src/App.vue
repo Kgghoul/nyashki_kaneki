@@ -28,13 +28,19 @@ const sections = {
 }
 
 const adminTeam = [
+  
+function getImageUrl(name) {
+  return new URL(`../public/${name}`, import.meta.url).href
+}
+
+const adminTeam = [
   {
     id: 1,
     name: 'Kaneki Ken',
     role: 'Основатель',
     description: 'Основатель чата. Занимается вливанием новичков, слежкой за чатом и разработкой бота.',
     gradient: 'linear-gradient(135deg, #ff1744, #ad1457, #6a1b9a)',
-    image: '/kaneki2.png'
+    image: getImageUrl('kaneki2.png')
   },
   {
     id: 2,
@@ -42,7 +48,7 @@ const adminTeam = [
     role: 'Владелец',
     description: 'Владелец чата. Ищет и принимает новичков, следит за чатом, занимается чисткой и монтажом.',
     gradient: 'linear-gradient(135deg, #9c27b0, #673ab7, #3f51b5)',
-    image: '/gojo.png'
+    image: getImageUrl('gojo.png')
   },
   {
     id: 3,
@@ -50,7 +56,7 @@ const adminTeam = [
     role: 'Совладелец',
     description: 'Совладелец и помощник Годжо.<br>Ищет новичков, помогает с чисткой и набором в админы.',
     gradient: 'linear-gradient(135deg, #ff5722, #ff9800, #ffc107)',
-    image: '/djorno.png'
+    image: getImageUrl('djorno.png')
   },
   {
     id: 4,
@@ -58,7 +64,7 @@ const adminTeam = [
     role: 'Старший Админ',
     description: 'Старший администратор.<br>Занимается монтажом видео, поддерживает активность и следит за чатом.',
     gradient: 'linear-gradient(135deg, #666666, #888888, #aaaaaa)',
-    image: '/komako.png'
+    image: getImageUrl('komako.png')
   },
   {
     id: 5,
@@ -66,7 +72,7 @@ const adminTeam = [
     role: 'Старший Админ',
     description: 'Монтаж видео и слежка за чатом.<br>(Старший админ потому что слишком пиздато и часто монтирует)',
     gradient: 'linear-gradient(135deg, #2e7d32, #388e3c, #4caf50)',
-    image: '/urahara.png'
+    image: getImageUrl('urahara.png')
   }
 ]
 
