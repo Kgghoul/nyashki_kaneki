@@ -29,7 +29,7 @@ const sections = {
 
 const adminTeam = [
   
-function getImageUrl(name) {
+const getImageUrl = (name) => {
   return new URL(`../public/${name}`, import.meta.url).href
 }
 
