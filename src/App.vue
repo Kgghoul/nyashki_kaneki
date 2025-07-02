@@ -154,6 +154,16 @@ onMounted(() => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
   })
   
+  // Устанавливаем фоновое изображение
+  const backgroundUrl = getImageUrl('mainwallpaper.jpeg')
+  const appElement = document.querySelector('.app')
+  if (appElement) {
+    appElement.style.backgroundImage = `
+      linear-gradient(135deg, rgba(75, 0, 130, 0.0) 0%, rgba(106, 27, 154, 0.20) 25%, rgba(138, 43, 226, 0.20) 50%, rgba(156, 39, 176, 0.20) 75%, rgba(123, 31, 162, 0.20) 100%),
+      url(${backgroundUrl})
+    `
+  }
+  
   // Рассчитываем время работы чата
   calculateWorkingTime()
   
@@ -346,27 +356,14 @@ html, body {
 .app {
   min-height: 100vh;
   width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   position: relative;
-}
-
-.app::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(135deg, rgba(75, 0, 130, 0.0) 0%, rgba(106, 27, 154, 0.20) 25%, rgba(138, 43, 226, 0.20) 50%, rgba(156, 39, 176, 0.20) 75%, rgba(123, 31, 162, 0.20) 100%),
-    url('./mainwallpaper.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Навигация */
@@ -1301,10 +1298,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .app::before {
-    background-attachment: scroll;
-    transform: translateZ(0);
-  }
+
   
   .spiderverse-button {
     touch-action: manipulation;
