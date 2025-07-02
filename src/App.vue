@@ -140,19 +140,10 @@ function setSection(section) {
   isMenuOpen.value = false
 }
 
-// Функция для обработки клика по кнопке с задержкой
+// Функция для обработки клика по кнопке
 function handleJoinClick(event) {
   event.preventDefault()
-  
-  // Добавляем класс загрузки
-  const button = event.currentTarget
-  button.classList.add('loading')
-  
-  // Ждем 1 секунду, затем переходим по ссылке
-  setTimeout(() => {
-    window.open('https://t.me/kishimoro', '_blank')
-    button.classList.remove('loading')
-  }, 1000)
+  window.open('https://t.me/kishimoro', '_blank')
 }
 
 onMounted(() => {
